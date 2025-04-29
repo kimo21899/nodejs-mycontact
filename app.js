@@ -21,6 +21,8 @@ app.use("/contacts", require("./routes/contactRoutes"));
 
 
 // 서버 시작
-app.listen(3000, () => {
-  console.log('Server is running on port 3000');
+const PORT = process.env.PORT || 3000; // 환경 변수에서 포트를 가져오고, 없으면 3000으로 설정
+
+app.listen(PORT, () => {
+  console.log('Server is running on port ${PORT}');
 });
